@@ -1,0 +1,804 @@
+@import "_fonts.sass"
+@import "_styles.sass"
+
+// normallise----------------------------------------------------------
+*
+    margin: 0px
+    padding: 0px
+    font-family: 'RalewayRegular'
+    font-feature-settings: "lnum"
+    font-weight: normal
+    margin-block-start: 0
+    margin-block-end: 0
+    color: $textColor
+.wrapper
+    max-width: 1920px
+    margin: 0px auto
+.container
+    margin: 0px 140px
+h2
+    font-family: 'RalewayBold'
+    font-size: $headerText
+    line-height: 140%
+    margin: 28px 0px
+h3
+    font-family: 'RalewayBold'
+    font-size: 20px
+    line-height: 130%
+    color: $textColor
+    margin: 3px 0px 16px 0px
+ul 
+    list-style-type: none
+    padding: 0px
+    margin: 0px
+a
+    text-decoration: none
+    color: $textColor
+img
+    width: 100%
+    height: auto
+hr
+    width: 100%
+    border: none
+    border-radius: 0.5px
+button
+    border: none
+.phone-list
+    @include alignColumn()
+    width: 100%
+    margin-top: 10px
+    &__link
+        @include alignCenter()
+        white-space: nowrap
+        font-size: 20px
+    &__link span
+        font-family: 'RalewaySemiBold'
+    &__link img
+        width: 17px
+        margin: 5px 15px
+    &__link
+        margin: 10px 0px
+.burger
+    display: none
+    &__item
+        @include alignCenter()
+        justify-content: start
+        margin: 10px 20px
+    &__card
+        @include alignCenter()
+        margin: 10px 0px
+        &_item
+            position: relative
+        &_img
+            width: 20px
+            padding: 5px
+        &_label
+            @include alignCenter()
+            position: absolute
+            z-index: 100
+            top: 0px
+            right: 0px
+            width: 13px
+            height: 13px
+            border-radius: 8px
+            background-color: $orange
+        &_text
+            font-family: 'RalewayBold'
+            font-size: 7px
+            color: rgb(255, 255, 255)
+    &__card>p 
+        margin-left: 20px
+    &__menu
+        @include alignColumn()
+        align-items: start
+        margin: 10px 0px
+        &_item
+            margin: 10px 0px
+    &__list
+        @include alignColumn()
+        margin: 10px auto
+        &_text
+            font-size: 12px
+            color: $blue
+    &__langs
+        @include alignCenter()
+        width: 100%
+        margin: 50px 0px
+        &_item
+            margin: 10px
+        &_link
+            font-family: 'RalewaySemiBold'
+            line-height: 120%
+            color: $blue    
+.burger hr
+    height: 0.3px
+    background-color: $grey
+.search-burger
+    display: none
+    &__item
+        margin-top: 60px
+    &__social
+        @include alignCenter()
+        margin-top: 20px
+        margin-bottom: 50px
+        &_link
+            width: 34px
+            margin: 10px 
+    &__form
+        @include alignCenter()
+        justify-content: space-between
+        height: 50px
+        border: 1px solid $textColor
+        border-radius: 60px
+        &_button
+            @include alignCenter()
+            width: 50px
+            height: 48px
+            padding: 16px
+            border: none
+            border-radius: 40px
+            background-color: $grey
+    &__input
+        margin-left: 35px
+        font-size: 16px
+        border: none
+        outline: none
+    &__input::placeholder
+        font-size: 16px
+        color: $textColor
+.select-list
+    @include alignCenter()
+    width: 100%
+    &__block
+        position: relative
+        @include alignColumn()
+        align-items: start
+    &__item
+        @include alignCenter()
+        width: 100%
+        height: 26px
+    &__options
+        display: none
+        position: absolute
+        z-index: 100
+        top: 30px
+        background-color: rgb(255, 255, 255)
+    &__current-element,
+    &__option
+        @include alignCenter()
+        white-space: nowrap
+        font-size: 22px
+    &__current-element span,
+    &__option span
+        font-family: 'RalewaySemiBold'
+    &__current-element img,
+    &__option img
+        height: 100%
+        width: auto
+        margin: 5px 15px
+    &__option
+        margin-top: 30px
+    &__item button
+        @include alignCenter()
+        width: 18px
+        height: 18px
+        margin: 5px
+        border: none
+        background-color: #fff
+.slider
+    @include alignCenter()
+    width: 100%
+    height: 500px
+    box-sizing: border-box
+    padding: 25px 0px
+    &__gallery
+        @include alignCenter()
+        &_lage
+            @include alignColumn()
+            height: 100%
+            padding: 0px 20px
+            justify-content: start
+            overflow-y: auto
+            overflow-x: hidden
+            &::-webkit-scrollbar
+                width: 5px
+            &::-webkit-scrollbar-thumb
+                width: 5px
+                border-radius: 3px
+                background-color: $blue
+            &::-webkit-scrollbar-track
+                background-image: linear-gradient(to right, transparent, transparent 2px, rgba(243, 246, 249, 1) 2px, rgba(243, 246, 249, 1) 3px, transparent 3px)
+        &_small
+            @include alignCenter()
+            display: none
+        &_img
+            box-sizing: border-box
+            width: 78px
+            height: 78px
+            margin-bottom: 10px
+            padding: 8px 0px
+            border-radius: 5px
+        &_item
+            width: 3px
+            height: 3px
+            margin: 0px 7px
+            border-radius: 3px
+            background-color: $grey
+    &__current-img
+        @include alignCenter()
+        position: relative
+        box-sizing: border-box
+        width: 100%
+        height: 100%
+        &_favorite
+            position: absolute
+            z-index: 100
+            top: 0px
+            right: 0px
+            width: 34px
+            stroke: $blue
+        &_label
+            @include alignCenter()
+            display: none
+            position: absolute
+            z-index: 100
+            top: 50px
+            right: 0px
+            padding: 10px 25px
+            font-family: 'RalewayMedium'
+            white-space: nowrap
+            color: #fff
+            border-radius: 40px 0px 0px 40px
+            background-color: rgba(42, 175, 56, 1)
+    &__main-img
+        max-height: 100%
+.orange
+    color: $orange
+.blue
+    color: $blue
+// ------------------------------------------------------------------------
+// header------------------------------------------------------------------
+.header
+    height: 155px
+    &__navbar
+        @include alignCenter()
+        justify-content: space-between
+        width: 100%
+        height: 50px
+        background-color: $grey
+    &__item
+        @include alignCenter()
+    &__title
+        @include alignCenter()
+        justify-content: start
+        width: 100%
+        height: 105px
+        &_item
+            flex: 0 1 50%
+.menu
+    @include alignCenter()
+    &__item
+        margin-right: 60px
+        &_link
+            line-height: 120%
+            color: $linkText 
+.controls
+    @include alignCenter()
+    &__item
+        @include alignCenter()
+    &__card
+        @include alignCenter()
+        margin-left: 110px
+        &_item
+            position: relative
+        &_img
+            width: 30px
+            padding: 5px
+        &_label
+            @include alignCenter()
+            position: absolute
+            z-index: 100
+            top: 0px
+            right: 0px
+            width: 20px
+            height: 20px
+            border-radius: 10px
+            background-color: $orange
+        &_text
+            font-family: 'RalewayBold'
+            font-size: 10px
+            color: rgb(255, 255, 255)
+    &__card>p
+        font-family: 'RalewaySemiBold'
+        line-height: 120%
+.logo
+    @include alignCenter()
+    justify-content: start
+    &__item
+        @include alignCenter()
+        &_text
+            margin: 10px 0px 5px 5px
+.langs
+    &__item
+        margin: 10px
+    &__link
+        font-family: 'RalewaySemiBold'
+        line-height: 120%
+        color: $blue    
+.search-form
+    @include alignCenter()
+    justify-content: space-between
+    width: 100%
+    height:  50px
+    border: 1px solid $textColor
+    border-radius: 60px
+    &__input
+        width: 100%
+        margin: 0px 35px
+        font-size: 16px
+        border: none
+        outline: none
+    &__input::placeholder
+        font-size: 16px
+        color: $textColor
+    &__button
+        width: 50px
+        height: 48px
+        padding: 16px
+        border: none
+        border-radius: 40px
+        background-color: $grey
+.header hr
+    height: 1px
+    background-color: $grey
+// ------------------------------------------------------------------------
+// page--------------------------------------------------------------------
+.page
+    &__tabs
+        @include alignCenter()
+        justify-content: start
+        width: 100%
+        margin-top: 30px
+        &_item
+            @include alignCenter()
+            justify-content: start
+        &_item p 
+            font-family: 'RalewayMedium'
+            font-size: 12px
+        &_item-active p
+            font-family: 'RalewayRegular'
+            font-size: 12px
+            color: $blue
+        &_arrow
+            @include alignCenter()
+            box-sizing: border-box
+            width: 10px
+            padding: 0px 4px
+            margin: 0px 5px
+    &__card
+        @include alignColumn()
+        margin-top: 50px
+        &_row
+            display: flex
+            width: 100%
+            margin-bottom: 28px
+        &_left-col
+            display: flex
+            flex-direction: column
+            flex: 0 1 57%
+        &_right-col
+            box-sizing: border-box
+            display: flex
+            flex-direction: column
+            flex: 0 1 43%
+            padding-left: 40px
+.delivery
+    &__item
+        width: 100%
+        display: flex
+        margin: 25px 0px
+    &__img
+        width: 50px
+        height: 50px
+    &__text
+        display: flex
+        flex-direction: column
+        margin: 0px 110px 0px 20px
+        font-size: $mainText
+    &__text p
+        line-height: 140%
+.delivery hr 
+    height: 0.3px
+    background-color: $blue
+.info
+    @include alignColumn()
+    justify-content: start
+    width: 100%
+    height: 100%
+    box-sizing: border-box
+    padding: 0px 35px 
+    border-radius: 10px
+    background-color: $grey
+    &__articule
+        @include alignColumn()
+        align-items: stretch
+        font-size: 17px
+        width: 100%
+        text-align: right        
+    &__articule p 
+        margin: 30px 0px
+        font-family: 'RalewayMedium'
+    &__articule span
+        font-family: 'RalewayBold'
+        color: $linkText
+    &__articule hr 
+        height: 0.5px
+        background-color: rgba(219, 220, 222, 1)
+    &__state
+        @include alignColumn()
+        align-items: stretch
+        font-size: 14px
+        width: 100%
+        text-align: left  
+    &__state p
+        margin-top: 35px
+        font-family: 'RalewayMedium'
+    &__state span
+        text-transform: uppercase
+        font-family: 'RalewayBold'
+        color: $linkText
+    &__block
+        @include alignCenter()
+        margin-top: 13px
+    &__item
+        @include alignCenter()
+    &__item input 
+        width: 20px
+        height: 20px
+        margin-right: 15px
+        border: 1px solid $blue
+        border-radius: 1px
+        background-color: $grey
+    &__payment-price
+        @include alignColumn()
+        align-items: start
+        flex: 0 1 60%
+        &_img
+            width: 24px
+        &_price
+            font-size: 18px
+        &_price span
+            margin-left: 15px
+            font-family: 'RalewayBold'
+            font-size: 30px
+        &_discount
+            margin-left: 15px
+            font-family: 'RalewaySemiBold'
+            font-size: 20px
+            text-decoration: line-through
+    &__counter
+        @include alignCenter()
+        justify-content: start
+        margin-top: 45px
+        &_text
+            font-size: 15px
+        &_block
+            @include alignCenter()
+            margin-left: 15px
+        &_button
+            background-color: rgb(255, 255, 255)
+        &_img
+            stroke: $orange
+            width: 6px
+            padding: 15px
+        &_value
+            width: 55px
+            height: 30px
+            font-size: 16px
+            text-align: center
+            border: 1px solid rgba(219, 220, 222, 1)
+    &__controls
+        @include alignCenter()
+        justify-content: space-between
+        width: 100%
+        margin-top: 50px
+        &_button
+            @include alignCenter()
+            width: 280px
+            border-radius: 40px
+            font-family: 'RalewayMedium'
+            font-size: 18px
+            color: rgb(255, 255, 255)
+        &_img
+            width: 24px
+            padding: 15px 20px
+        &_img-fill
+            fill: rgb(255, 255, 255)
+        &_img-stroke
+            stroke: rgb(255, 255, 255)
+    &__payment-delivery
+        @include alignColumn()
+        align-items: start
+        flex: 0 1 40%
+        box-sizing: border-box
+        padding: 25px
+        border-radius: 10px
+        background-color: #fff
+    &__payment-delivery p
+        font-family: 'RalewayMedium'
+        font-size: 15px
+#decrement-button
+    border-radius: 5px 0px 0px 5px
+#increment-button
+    border-radius: 0px 5px 5px 0px
+#add-to-cart
+    background-color: $orange
+#pay-by-click
+    background-color: $blue
+.description
+    @include alignColumn()
+    align-items: start
+    flex: 0 1 75%
+    &__item
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-bottom: 25px
+    &__title
+        width: 100%
+        display: flex
+        align-items: flex-end
+    &__title p
+        white-space: nowrap
+        font-family: 'RalewayMedium'
+        font-size: 18px
+        color: $blue
+    &__title hr
+        width: 100%
+        height: 1px
+        margin: 0px 10px
+        background-color: $grey
+    &__value
+        display: flex
+        flex: 0 1 20%
+        white-space: nowrap
+        font-family: 'RalewayBold'
+        font-size: 18px
+// ------------------------------------------------------------------------
+// footer------------------------------------------------------------------
+.footer
+    width: 100%
+    margin-top: 560px
+    background-color: rgba(44, 44, 53, 1)
+    &__row
+        @include alignCenter()
+        justify-content: space-between
+        align-items: start
+    &__item
+        @include alignColumn()
+        justify-content: start
+        align-items: flex-start
+        flex: 0 1 25%
+        width: 100%
+        margin-top: 80px
+    &__logo
+        display: flex
+        justify-content: start
+        &_item
+            @include alignCenter()
+        &_item-img
+            width: 37px
+            fill: #fff
+        &_item-text
+            width: 180px
+            fill: #fff
+            margin: 10px 0px 5px 5px
+    &__social
+        @include alignCenter()
+        justify-content: start
+        margin-top: 20px
+        &_link
+            width: 34px
+            margin-right: 20px 
+    &__header
+        font-family: 'RalewayMedium'
+        font-size: 18px
+    &__list
+        width: 100%
+        margin-top: 50px 
+    &__link
+        @include alignCenter()
+        justify-content: start
+        margin-bottom: 10px
+    &__link pre
+        font-size: 20px
+        font-family: 'RalewayLight'
+        color: rgb(255, 255, 255)
+    &__link span
+        font-family: 'RalewayMedium'
+        font-size: 20px
+        color: rgb(255, 255, 255)
+    &__link img
+        height: 100%
+        width: auto
+        margin: 5px 15px
+    &__info
+        width: 100%
+        padding: 25px 0px
+        margin-top: 100px
+        @include alignCenter()
+        justify-content: space-between
+        background-color: rgba(33, 33, 33, 1)
+        &_row
+            width: 100%
+            @include alignCenter()
+            justify-content: space-between
+        &_item-text
+            font-family: 'RalewayMedium'
+            font-size: 14px
+            color: #fff
+        &_label
+            @include alignColumn()
+            width: 144px
+        &_label-text
+            margin-top: 5px
+            font-size: 9px
+            font-family: 'RalewayLight'
+            color: rgb(255, 255, 255)
+// ------------------------------------------------------------------------
+.small-screen
+    display: none
+.active-img
+    border: 1px solid $orange
+.active-slide
+    background-color: $blue
+    width: 5px
+    height: 5px
+.disable-lang
+    color: rgba(219, 220, 222, 1)
+    font-family: 'RalewayMedium'
+
+@media (max-width: 320px) 
+    .small-screen
+        display: flex
+    .lage-screen
+        display: none
+    .container
+        margin: 0px 15px
+    h2
+        margin: 20px 0px
+        font-size: 18px
+    h3
+        margin: 1px 0px 12px 0px
+        font-size: 14px
+    .slider
+       @include alignColumn() 
+       height: 260px
+       padding: 20px 0px
+    .slider__gallery_lage
+        display: none  
+    .slider__gallery_small
+        display: flex
+    .slider__current-img_favorite
+        width: 20px
+        right: 20px
+    .slider__current-img_label
+        top: 35px
+        padding: 5px 10px
+        font-size: 10px
+    .header
+        height: 65px
+    .header__navbar
+        height: 65px
+    .controls
+        &__card
+            margin-left: 30px
+            &_img
+                width: 24px
+                padding: 0px
+    .page
+        &__tabs
+            margin-top: 15px
+            &_item p 
+                font-size: 10px
+            &_item-active p
+                font-size: 10px
+        &__card
+            margin-top: 0px
+            &_row
+                flex-direction: column
+                margin-bottom: 0px
+            &_left-col
+                flex: 0 1 100%
+            &_right-col
+                flex: 0 1 100%
+                padding: 0px
+    .info
+        padding: 20px 15px
+        background-color: #fff
+        &__articule
+            font-size: 16px
+            text-align: left
+        &__articule p
+            margin: 2px 40% 2px 0px
+        &__articule hr
+            display: none
+        &__state p
+            margin: 0px
+        &__block
+            flex-direction: column
+            margin-top: 35px
+        &__counter
+            margin-top: 35px
+        &__controls
+            margin-top: 35px
+            flex-direction: column
+            &_button
+                margin-bottom: 10px
+                width: 100%
+                font-size: 16px
+        &__payment-delivery
+            margin-top: 35px
+            border: 1px solid $grey
+    .description
+        &__item
+            margin-bottom: 15px
+        &__title p
+            font-size: 12px
+        &__value 
+            flex: 0 1 25%
+            font-size: 12px
+    .delivery
+        &__item
+            margin: 0px
+        &__img
+            width: 35px
+        &__text
+            margin: 0px 15px
+        &__text p 
+            font-size: 12px
+    .delivery hr
+        margin: 15px 0px
+    .footer
+        margin-top: 350px
+        &__row
+            flex-direction: column
+        &__item
+            margin-top: 80px
+        &__item.small-screen
+            @include alignCenter()
+            margin-top: 130px
+        &__list
+            margin-top: 30px
+        &__link
+            margin-bottom: 25px
+        &__link pre
+            font-size: 16px
+        &__link span
+            font-size: 16px
+        &__logo
+            width: 100%
+            justify-content: center
+            &_item-img
+                width: 26px
+            &_item-text
+                width: 125px
+        &__info
+            margin-top: 60px
+            &_row
+                flex-direction: column
+            &_item.small-screen
+                margin-top: 30px
+            &_item-text
+                font-size: 10px
+            &_label
+                width: 120px
+            &_label-text
+                font-size: 7px
+
+
+
+
+
+
+
